@@ -29,10 +29,7 @@ const DashboardPage = () => {
     }
   }, []);
 
-  useEffect(() => {
-    fetchTasks();
-  }, [fetchTasks]);
-
+  // Single useEffect handles both initial load (searchQuery='') and search
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
       fetchTasks(searchQuery);
